@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		/* font-family: 'Oxygen', sans-serif;
+font-family: 'Oxygen Mono', monospace;
+font-family: 'Roboto Slab', serif; */
+body {
+	background-color:teal;
+	color:white;
+	margin:0;
+	text-align:center;
+	min-height:200vh;
+	font-family: 'Oxygen', sans-serif;
+}
+h1,h2,h3 {
+	font-family: 'Roboto Slab', serif;
+	margin:.5em 0 1em 0;
+}
+h2 {
+	margin-top:5em;
+}
+header h2 {
+	margin-top:0;
+}
+header {
+	height:100vh;
+	position:relative;
+	overflow:hidden;
+}
+header .parallax {
+	position:absolute;
+	width:100%;
+	height:100%;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+}
+header h1 {
+	font-size:3em;
+	color:#fff;
+	text-shadow: 0 0 4px teal,0 0 8px teal,0 0 16px teal,
+		1px 1px 0 teal,
+		1px -1px 0 teal,
+		-1px 1px 0 teal,
+		-1px -1px 0 teal;
+}
+header h2, header h3 {
+	opacity:.8
+}
+header .gradient {
+	background: linear-gradient(transparent, teal);
+	height:40%;
+	top:60%;
+	position:relative;
+}
+.demo-1 {
+	height:200px;
+	overflow:hidden;
+	display:flex;
+	justify-content:space-around;
+	box-shadow:0 16px 48px rgba(0,0,0,0.2);
+	background-color:#006b6b
+}
+.demo-1 .parallax {
+	height:300px;
+	width:300px;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	background-image:url(https://blog.codepen.io/wp-content/uploads/2017/03/codepen-600x600.jpg);
+	background-size:cover;
+	background-repeat:no-repeat;
+	background-position:center;
+}
+.codes {
+	display:flex;
+	justify-content:space-around;
+}
+@media (orientation: portrait) {
+	.codes {
+		flex-direction: column;
+	}
+}
+.code {
+	background-color:rgba(255,255,255,0.25);
+	box-shadow:0 16px 48px rgba(0,0,0,0.2);
+	border-radius:3px;
+	min-height:5em;
+	margin:0 1em;
+	font-family: 'Oxygen Mono', monospace;
+	padding:1em;
+	text-align:left;
+	color:#710;
+}
+.code[lan="html"]:before {
+	content:'HTML';
+}
+.code[lan="css"]:before {
+	content:'CSS';
+}
+.code:before {
+	display:block;
+	font-family: 'Roboto Slab', serif;
+	color:#005c5c;
+	text-align:center;
+	font-weight:bold;
+	padding-bottom:1em
+}
+.code .tab {
+	display:inline-block;
+	width:1.5em;
+}
+.code .hover {
+	text-decoration:underline;
+	position:relative;
+	cursor:pointer;
+}
+.code a {
+	color:inherit;
+	text-decoration:inherit;
+}
+.hover[msg="speed"]:before {
+	content:'Declares the power of shifting. Click to learn more.';
+}
+.hover[msg="parallax"]:before {
+	content:'You have to add this.';
+}
+.hover[msg="jq"]:before {
+	content:'Add a link to jQuery here. Click to learn more.';
+}
+.code .hover:before {
+	box-shadow:0 4px 16px rgba(0,0,0,0);
+	text-decoration:none;
+	color:#fff;
+	position:absolute;
+	min-width:200%;
+	left:-50%;
+	bottom:0;
+	border-radius:3px;
+	font-size:.8em;
+	transition:.5s;
+	color:transparent;
+	background-color:rgba(255,255,255,0);
+	padding:.5em;
+}
+.code .hover:hover:before {
+	box-shadow:0 4px 16px rgba(0,0,0,0.2);
+	bottom:2em;
+	background-color:rgba(0,92,92,0.8);
+	color:white
+}
+.code-comment {
+	color:#567;
+}
+.code-class {
+	color:#160;
+}
+.code-attr {
+	color:#ab1;
+}
+::selection {
+	background-color:rgba(255,255,255,0.2)
+}
+
+.tipps {
+	display:flex;
+	flex-direction: column;
+}
+.tip {
+	background-color:rgba(0,0,0,0.2);
+	box-shadow:0 16px 48px rgba(0,0,0,0.2);
+	border-radius:3px;
+	min-height:5em;
+	margin:0 1em;
+	padding:1em;
+}
+.spacer {
+	height:1em;
+}
+code {
+	font-size:inherit;
+	font-family: 'Oxygen Mono', monospace;
+}
+.link {
+	color:inherit;
+	transition:.3s;
+}
+.link:hover {
+	background-color:#fff;
+	color:teal
+}
+.permission {
+	background: linear-gradient(transparent, rgba(0,0,0,0.2));
+	padding:3em 5%;
+}
+.downloads a {
+	display:inline-block;
+	padding:1em;
+	margin:1em 0;
+	background-color:rgba(0,0,0,0.2);
+	color:rgba(255,255,255,0.8);
+	text-decoration:none;
+	border-radius:0 2em 2em 0;
+	transition:color .3s, border-radius 1s, box-shadow 1s;
+}
+.downloads a:hover {
+	border-radius:0;
+	color:#fff;
+	box-shadow: 16px 0 0 rgba(0,0,0,0.3);
+}
+.downloads a:first-child {
+	border-radius:2em 0 0 2em;
+}
+.downloads a:first-child:hover {
+	border-radius:0;
+	box-shadow: -16px 0 0 rgba(0,0,0,0.3);
+}
+	</style>
+</head>
+<body>
+	<header>
+	<div class="parallax" speed="1.5">
+		<h3>by Jakob Bähr</h3>
+	</div>
+	<div class="parallax" speed="2">
+		<h2>requires jQuery</h2>
+	</div>
+	<div class="parallax" speed="4">
+		<h1>Parallax.js</h1>
+	</div>
+	<div class="gradient">
+	</div>
+</header>
+<section>
+	<h2 id="theycallmespeed">Demo 1: Speed difference</h2>
+	<div class="demo-1">
+		<div class="parallax" speed="0.75">
+			I am at speed 0.75
+		</div>
+		<div class="parallax" speed="1">
+			I am at speed 1<br> (practicially background-attachment:fixed)
+		</div>
+		<div class="parallax" speed="2">
+			I am at speed 2
+		</div>
+		<div class="parallax" speed="4">
+			I am at speed 4
+		</div>
+	</div>
+	
+	<h2>Markup: Basics</h2>
+	<div class="codes">
+		<!-- HTML -->
+		<div class="code" lan="html">
+			&lt;script <span class="code-class">src</span>=<span class="code-attr">"<a href="#usejq"><span class="hover" msg="jq">jquery.js</span></a>"</span>&gt;&lt;/script&gt;<br>
+			&lt;script <span class="code-class">src</span>=<span class="code-attr">"parallax.js"</span>&gt;&lt;/script&gt;<br><br>
+			&lt;div <span class="code-class">class</span>=<span class="code-attr">"<span class="hover" msg="parallax">parallax</span>"</span> <a href="#theycallmespeed"><span class="hover code-class" msg="speed">speed</span></a>=<span class="code-attr">"2"</span>&gt;<br>
+			<div class="tab"></div><span class="code-comment">&lt;!-- Content --&gt;</span><br>
+			&lt;/div&gt;
+		</div>
+		
+		<!-- CSS -->
+		<div class="code" lan="css">
+			<span class="code-comment">/* Nothing really<br>
+				<div class="tab"></div>if you use background, make sure you have a height.<br>
+				<div class="tab"></div>if you want to prevent overflow, add a parent with overflow:hidden */</span>
+		</div>
+	</div>
+
+	<h2>Demo 2: Multilayered</h2>
+	<div class="demo-2">
+		<div class="parallax layer-1" speed="1.2">
+		</div>
+		<div class="parallax layer-2" speed="2.5">
+		</div>
+		<style>
+			.demo-2 {
+				position: relative;
+				height: 50vh;
+				overflow: hidden;
+				box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
+				background-color: #006b6b;
+			}
+			.demo-2 .parallax {
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				width: 100%;
+				background-repeat: no-repeat;
+				background-position: center;
+			}
+			.demo-2 .layer-1 {
+				background-image: url(http://theartmad.com/wp-content/uploads/Grey-Wallpaper-2.jpg);
+				background-size: cover;
+				height: 200%;
+			}
+			.demo-2 .layer-2 {
+				background-image: url(https://blog.codepen.io/wp-content/uploads/2012/06/Button-White-Large.png);
+				background-size: contain;
+				height: 100%;
+			}
+		</style>
+	</div>
+
+	<h2>Markup: Multilayered</h2>
+	<div class="codes">
+		<!-- HTML -->
+		<div class="code" lan="html">
+			&lt;script <span class="code-class">src</span>=<span class="code-attr">"<a href="#usejq"><span class="hover" msg="jq">jquery.js</span></a>"</span>&gt;&lt;/script&gt;<br>
+			&lt;script <span class="code-class">src</span>=<span class="code-attr">"parallax.js"</span>&gt;&lt;/script&gt;<br><br>
+			&lt;div <span class="code-class">class</span>=<span class="code-attr">"parent"</span>&gt;<br>
+			<div class="tab"></div>&lt;div <span class="code-class">class</span>=<span class="code-attr">"<span class="hover" msg="parallax">parallax</span> layer-1"</span> <a href="#theycallmespeed"><span class="hover code-class" msg="speed">speed</span></a>=<span class="code-attr">"1.5"</span>&gt;<br>
+			<div class="tab"></div>
+			<div class="tab"></div><span class="code-comment">&lt;!-- First Layer --&gt;</span><br>
+			<div class="tab"></div>&lt;/div&gt;<br>
+			<div class="tab"></div>&lt;div <span class="code-class">class</span>=<span class="code-attr">"<span class="hover" msg="parallax">parallax</span> layer-2"</span> <a href="#theycallmespeed"><span class="hover code-class" msg="speed">speed</span></a>=<span class="code-attr">"2"</span>&gt;<br>
+			<div class="tab"></div>
+			<div class="tab"></div><span class="code-comment">&lt;!-- Second Layer --&gt;</span><br>
+			<div class="tab"></div>&lt;/div&gt;<br>
+			&lt;/div&gt;
+		</div>
+		
+		<!-- CSS -->
+		<div class="code" lan="css">
+			.parent {<br>
+			<div class="tab"></div><span class="code-class">position</span>:<span class="code-attr">relative</span>;<br>
+			<div class="tab"></div><span class="code-class">overflow</span>:<span class="code-attr">hidden</span>; <span class="code-comment">/* personal tipp */</span>
+			<br>}<br>
+			.parallax {<br>
+			<div class="tab"></div><span class="code-class">position</span>:<span class="code-attr">absolute</span>;<br>
+			<div class="tab"></div><span class="code-class">top</span>:<span class="code-attr">0</span>;<br>
+			}
+		</div>
+	</div>
+	<h2>Download</h2>
+	Super-super lightweight!
+	<div class="downloads">
+		<a href="http://bambusource.de/js/parallax.min.js" download>minified (0.6 kb)</a><a href="http://bambusource.de/js/parallax.js" download>readable (1.2 kb)</a>
+	</div>
+	<h2>Tipps</h2>
+	<div class="tipps">
+		<div class="tip">
+			<h3 id="usejq">use Googles jQuery</h3>
+			It probably is cached for the user and doesn't have to load.<br>
+			<code>&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"&gt;<br>&lt;/script&gt;</code>
+		</div>
+		<div class="spacer"></div>
+		<div class="tip">
+			<h3>Use a smooth scroll plugin</h3>
+			Does it lag in Firefox or Edge? Add some plugin like <a href="https://github.com/nathco/jQuery.scrollSpeed" target="_blank" class="link">this</a> to fix this issue. It's not my fault.. *points at microsoft and firefox*
+		</div>
+	</div>
+	<h2>Permission</h2>
+	<div class="permission">Anyone can use it for free. You can modify it, publish your version. You don't have to, but if you're nice, please link me in your page credits. Love ya!<br>-Jakob</div>
+</section>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+<script type="text/javascript">
+	$(document).ready(function(){function t(){var t=document.documentElement.scrollTop||document.body.scrollTop;for(i=0;i<e.length;i++)ActiveLayer=e[i],ActiveParent=$(ActiveLayer).parent(),Distance=ActiveParent.offset().top,HeightParent=ActiveParent.height(),HeightLayer=$(ActiveLayer).height(),console.log(t),Scroll=Math.round((t-Distance)/$(ActiveLayer).attr("speed")),$(ActiveLayer).css({transform:"translateY("+Scroll+"px)","-moz-transform":"translateY("+Scroll+"px)","-ms-transform":"translateY("+Scroll+"px)"})}var e=$(document).find(".parallax");$(window).scroll(function(){t()})});
+
+$(function(){$('a[href*="#"]:not([href="#"])').click(function(){if(location.pathname.replace(/^\//,'')==this.pathname.replace(/^\//,'')&&location.hostname==this.hostname){var target=$(this.hash);target=target.length ? target : $('[name='+this.hash.slice(1)+']');if(target.length){$('html,body').animate({scrollTop:target.offset().top},300);return false;}}});});
+</script>
+</body>
+</html>
